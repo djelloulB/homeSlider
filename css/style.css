@@ -1,0 +1,76 @@
+body {
+  min-height: calc(100vh - 100px);
+  margin: 0;
+  background: url(https://audreyhossepian.fr/img/logo.png),
+    linear-gradient(40deg, #fc466b, #3f5efb);
+  background-position: 95% 90%;
+  background-repeat: no-repeat;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 50px;
+  color: white;
+}
+a {
+  color: inherit;
+}
+* {
+  outline: none;
+}
+
+header {
+  padding-bottom: 2em;
+}
+
+.hide {
+  display: none;
+}
+
+.slider {
+  -webkit-backface-visibility: hidden;
+  /* obligatoire pour éviter l'effet de crénelage sous Chrome */
+  backface-visibility: hidden;
+  text-align: center;
+  transform: rotate(-3deg);
+}
+
+.slider figcaption {
+  font-size: 2rem;
+  font-weight: bold;
+  /* text-transform: uppercase; */
+  text-align: center;
+  margin-top: 30px;
+}
+
+.slider img {
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+  max-width: 80%;
+}
+
+.toolbar ul {
+  /* structure */
+  padding-left: 0;
+  /* presentation */
+  list-style-type: none;
+  text-align: center;
+}
+
+.toolbar ul li {
+  display: inline-block;
+}
+
+.toolbar ul li + li {
+  margin-left: 1em;
+}
+
+.toolbar ul li button {
+  background-color: transparent;
+  border: 2px solid white;
+  height: 50px;
+  width: 50px;
+  border-radius: 5px;
+}
+
+.toolbar ul li button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}

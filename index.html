@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript</title>
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/fontawesome.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <header>
+        <h1>Slider fait maison ! </h1>
+        <nav class="toolbar">
+            <a id="toolbar-toggle" href="#"><i class="fa fa-arrow-right"></i> Barre d'outils</a>
+            <ul class="hide">
+                <li><button id="slider-previous" title="Image précédente"><i class="fa fa-backward"></i></button></li>
+                <li><button id="slider-toggle" title="Démarrer le carrousel"><i class="fa fa-play"></i></button></li>
+                <li><button id="slider-next" title="Image suivante"><i class="fa fa-forward"></i></button></li>
+                <li><button id="slider-random" title="Sélectionner une image aléatoire"><i
+                            class="fa fa-random"></i></button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <figure id="slider" class="slider">
+            <img src="" alt="Photo du carrousel">
+            <figcaption></figcaption>
+        </figure>
+    </main>
+
+
+    <!-- Fonctions utilitaires -->
+    <script src="js/utilities.js"></script>
+    <!-- Code principal du carrousel -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
