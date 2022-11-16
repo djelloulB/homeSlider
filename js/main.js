@@ -37,51 +37,39 @@ const RAND_BTN = document.querySelector("#slider-random");
 const IMG_TAG = document.querySelector("#slider img");
 const FIGCAPTION = document.querySelector("#slider figcaption");
 const PLAY_BTN = document.querySelector("#slider-toggle");
-document.addEventListener("DOMContentLoaded", ()=>{
+var pauseIcon = PLAY_BTN.children;
 
+document.addEventListener("DOMContentLoaded", ()=>{
+    console.log(pauseIcon[0].classList);
     TOOLBAR.addEventListener("click", () => {
         UL.classList.toggle("hide");
     });
     
     state.index = 0;
     state.timer = false;
-    
-    console.log(state);
-  // console.log(slides.length);
-	//code principal ici
     refreshSlider();
     
     NEXT_BTN.onclick = next;
     PREV_BTN.onclick = previous;
     RAND_BTN.onclick = refreshSlider;
   
-    if(state.timer === true){
-        PLAY_BTN.addEventListener("click", play);
-        PLAY_BTN.addEventListener("click", ()=>{
-            clearInterval(startSlider);
-            console.log("clear interval")
-        });
-    }
+    PLAY_BTN.addEventListener("click", (e)=>{
+        state.timer = !state.timer;
+        refreshSlider();
+        if(state.timer === true){
+            pauseIcon[0].classList = "fa fa-pause";
+            PLAY_BTN.setAttribute("title", "Arréter le carroussel");
+            interval = setInterval(next, 2000);
+        } else {
+            clearInterval(interval);
+            pauseIcon[0].classList = "fa fa-play";
+            PLAY_BTN.setAttribute("title", "Démarrer le carrousel");
+        };
+
+});
   
 });
-function play() {
-    interval = setInterval(next, 2000);
-    // state.timer = !state.timer;
-    
-    // if(state.timer === true){
-    //     startSlider = setInterval(next, 2000);
-    //     console.log(state.timer);
-    //     console.log(startSlider);
-    // } else {
-    //    // clearInterval(startSlider);
-      
-    //     console.log(state.timer);
-    // }
 
-};
-function stop() {
-    clearInterval(interval);
-    }
 function getRandomInt(min,max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -104,7 +92,6 @@ function next(){
     }
     
 };
-
 function previous(){
         state.index -= 1;
         if (state.index === 0 ){
@@ -113,7 +100,6 @@ function previous(){
         }
         IMG_TAG.src = slides[state.index-1].image;
         FIGCAPTION.textContent = slides[state.index-1].legend;
-        //console.log(slides[state.index-1].image);
         console.log(state.index);
        
 };
