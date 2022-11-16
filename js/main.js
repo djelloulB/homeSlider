@@ -30,7 +30,6 @@ const TOOLBAR = document.querySelector("#toolbar-toggle");
 const UL = document.querySelector("nav.toolbar ul");
 var state ={};
 var interval;
-//var index = getRandomInt(slides.length-1);
 const NEXT_BTN = document.querySelector("#slider-next");
 const PREV_BTN = document.querySelector("#slider-previous");
 const RAND_BTN = document.querySelector("#slider-random");
